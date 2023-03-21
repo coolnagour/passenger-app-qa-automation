@@ -1,0 +1,48 @@
+{
+  "name": "driver-app-v2-qa-automation",
+  "author": "ICabbi",
+  "version": "1.0.0",
+  "description": "Test suite for the driver app v2",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "QA-Automation",
+    "Driver",
+    "App",
+    "Appium"
+  ],
+  "license": "ISC",
+  "scripts": {
+    "test": "OS=$OS npm run test:all",
+    "test:all": "mvn -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dtest=\"com.icabbi.driver.app.tests.*Test\" -Dplatform=\"$OS\" test -e",
+    "test:one": "mvn -Dtest=\"com.icabbi.driver.app.tests.WhatsNewTest\" -Dplatform=\"$OS\" test -e",
+    "start:android": "emulator -avd Pixel_API_28 &",
+    "stop:android": "adb devices | grep emulator | cut -f1 | while read line; do adb -s $line emu kill; done",
+    "start:ios": "open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/",
+    "clean-target": "rm -rf target/*",
+    "clean": "rm -rf node_modules && rm -f package-lock.json && npm install",
+    "appium": "appium --relaxed-security",
+    "build-android": "(cd ../../mobile/android/DriverApp && ./gradlew :app:assembleQa) && yes | cp ../../mobile/android/DriverApp/app/build/outputs/apk/qa/release/app-qa-release.apk src/apps/android/app-qa-universal-release-bitrise-signed.apk",
+    "allure-generate": "rm -rf target/allure-reports && allure generate target/allure-results -o target/allure-reports",
+    "allure-open": "allure open -h 127.0.0.1 target/allure-reports",
+    "allure-report": "npm run allure-generate && npm run allure-open"
+  },
+  "dependencies": {
+    "appium": "^2.0.0-beta.56",
+    "appium-chromedriver": "^5.3.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
+    "dirty-chai": "^2.0.1",
+    "jsdom": "^16.4.0",
+    "prettier": "^2.1.2",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "appium-mac2-driver": "^1.5.3",
+    "appium-uiautomator2-driver": "^2.12.6"
+  }
+}

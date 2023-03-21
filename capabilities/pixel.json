@@ -1,0 +1,10 @@
+{
+  "app": "/Users/kevinfeeney/IdeaProjects/driver-app-v2-qa-automation/src/apps/android/ic2-ca-single-std-dev-release.apk",
+  "appPackage": "com.icabbi.passenger_App",
+  "appActivity": "com.icabbi.passengerapp.presentation.login.presentation.LoginActivity",
+  "deviceName": "Pixel_API_28",
+  "platformName": "Android",
+  "platformVersion": "9",
+  "automationName": "UiAutomator2",
+  "udid": "emulator-5554"
+}

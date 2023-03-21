@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Happy Path Tests" >
+    <test name="Driver App">
+        <classes>
+<!--            <class name="com.icabbi.driver.app.testsDriverApp.HomeTest"/>-->
+            <class name="com.icabbi.driver.app.tests.LoginTest"/>
+<!--            <class name="com.icabbi.driver.app.testsDriverApp.StatusTest"/>-->
+<!--            <class name="com.icabbi.driver.app.testsDriverApp.MessageTest"/>-->
+<!--            <class name="com.icabbi.driver.app.testsDriverApp.OfferTest"/>-->
+<!--            <class name="com.icabbi.driver.app.testsDriverApp.BookingTest"/>-->
+<!--            <class name="com.icabbi.driver.app.testsDriverApp.ZoneTest"/>-->
+<!--            <class name="com.icabbi.driver.app.testsDriverApp.PanicTest"/>-->
+<!--            <class name="com.icabbi.driver.app.testsDriverApp.EarningTest"/>-->
+        </classes>
+    </test>
+</suite>

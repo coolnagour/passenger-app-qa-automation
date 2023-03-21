@@ -1,0 +1,7 @@
+{
+  "app": "${basedir}/src/apps/ios/iCabbiDriver.app",
+  "deviceName": "iPhone 13",
+  "platformName": "iOS",
+  "platformVersion": "15.4",
+  "automationName": "XCUITest"
+}
