@@ -1,6 +1,5 @@
 package com.icabbi.driver.app.pages.login;
 
-//import com.passenger.app.driver.IicabbiDriver;
 import com.icabbi.driver.app.driver.IicabbiDriver;
 import org.openqa.selenium.WebElement;
 

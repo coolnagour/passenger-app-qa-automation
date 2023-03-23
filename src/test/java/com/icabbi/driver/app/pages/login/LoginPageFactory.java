@@ -26,8 +26,7 @@ public class LoginPageFactory {
 
   public static ILoginDefaultPaymentPage getLoginDefualtPaymentPage(IicabbiDriver driver) {
     if (driver.isIOS()) {
-//      return new LoginDefualtPaymentPageIOS(driver);
-      return new LoginDefualtPaymentPageAndroid(driver);
+      return new LoginDefualtPaymentPageIOS(driver);
     } else {
       return new LoginDefualtPaymentPageAndroid(driver);
     }

@@ -36,7 +36,6 @@ public abstract class IcabbiDriverBase<D extends AppiumDriver<E>, E extends Mobi
     public IcabbiDriverBase(String language, String country, DriverInitialization initializationCallback) throws MalformedURLException {
         AppiumServiceBuilder builder;
         builder = new AppiumServiceBuilder().withArgument(() -> "--base-path", "/wd/hub");
-//        .withArgument(() -> "--allow-insecure","chromedriver_autodownload");
         builder.usingAnyFreePort();
 
         AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
@@ -342,39 +341,6 @@ public abstract class IcabbiDriverBase<D extends AppiumDriver<E>, E extends Mobi
         TapOptions tapOptions = new TapOptions();
         tapOptions.withTapsCount(3).withElement(ElementOption.element(button));
         touchAction.tap(tapOptions).waitAction(waitOptions(ofMillis(100))).perform();
-
-    }
-
-    @Override
-    public void drawSignature(MobileElement field) {
-        Dimension fieldSize = field.getSize();
-        int yStart = (int) (fieldSize.height * 0.8);
-        int yEnd = (int) (fieldSize.height * 0.20);
-        int x = fieldSize.width / 2;
-
-        TouchAction touchAction = new TouchAction(driver);
-
-        PointOption startPoint = new PointOption();
-        startPoint.withCoordinates(x, yStart);
-
-        PointOption endPoint = new PointOption();
-        endPoint.withCoordinates(x, yEnd);
-        touchAction.press(startPoint).moveTo(endPoint).waitAction(waitOptions(ofSeconds(1))).release().perform();
-
-    }
-
-    @Override
-    public void setLocation(String zoneTitle) {
-        switch(zoneTitle){
-//            case TestData.SUTTON_ZONE_TITLE:
-//                this.driver.setLocation(new Location(TestData.ICABBI_LAT, TestData.ICABBI_LNG, 0.00));
-//                break;
-//            case TestData.AIRPORT_ZONE_TITLE:
-//                this.driver.setLocation(new Location(TestData.AIRPORT_LAT, TestData.AIRPORT_LNG, 48.00));
-//                break;
-//            default:
-//                throw new IllegalStateException("Unexpected value: " + zoneTitle);
-        }
 
     }
 

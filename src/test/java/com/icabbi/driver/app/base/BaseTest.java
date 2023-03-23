@@ -22,12 +22,10 @@ public class BaseTest implements TestRule {
     public void setup(Method method) {
         try {
             driver = getDriver(new DriverInitialization() {
-
-                                   @Override
-                                   public <D extends AppiumDriver<E>, E extends MobileElement> void onBeforeInitialization(IcabbiDriverBase<D, E> driver) {
-//                                       mockServer.setDriver(driver);
-                                   }
-                               }
+                   @Override
+                   public <D extends AppiumDriver<E>, E extends MobileElement> void onBeforeInitialization(IcabbiDriverBase<D, E> driver) {
+                   }
+               }
             );
 
             System.out.println("Scenario: " + method.getName());

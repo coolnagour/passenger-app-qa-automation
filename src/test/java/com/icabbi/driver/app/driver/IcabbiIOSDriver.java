@@ -96,11 +96,6 @@ public class IcabbiIOSDriver extends IcabbiDriverBase<IOSDriver<IOSElement>, IOS
 
     }
 
-//    @Override
-//    public void switchToNative() {
-//
-//    }
-
     @Override
     public void switchToWeb() {
 

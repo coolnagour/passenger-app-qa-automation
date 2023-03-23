@@ -108,7 +108,6 @@ public class TestData {
 
         // Filter to leave out Unicode characters between 65 and 90 – to avoid out of range characters
         String generatedString = random.ints(leftLimit, rightLimit + 1)
-                //.filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
                 .limit(targetStringLength)
                 .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                 .toString();

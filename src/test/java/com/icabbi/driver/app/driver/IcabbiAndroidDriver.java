@@ -39,22 +39,15 @@ public class IcabbiAndroidDriver extends IcabbiDriverBase<AndroidDriver<AndroidE
 
     @Override
     protected String getDefaultAppFile() {
-//        return "apps/android/app-qa.apk";
         return "apps/android/ic2-ca-single-std-dev-release.apk";
     }
 
     @Override
     protected void configureCapabilities(DesiredCapabilities capabilities) {
-
-                capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.icabbi.passenger_App");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.icabbi.passenger_App");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.icabbi.passengerapp.presentation.launcher.LauncherActivity");
-
-
         capabilities.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_EXECUTABLE, "src/apps/chromedriver/chromedriver");
-
         capabilities.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_EXECUTABLE, "src/apps/chromedriver/chromedriver");
-
-
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
         capabilities.setCapability("androidInstallTimeout", 100000L);
@@ -62,7 +55,6 @@ public class IcabbiAndroidDriver extends IcabbiDriverBase<AndroidDriver<AndroidE
         capabilities.setCapability("newCommandTimeout", 100000L);
         capabilities.setCapability("autoGrantPermissions", true);
         capabilities.setCapability("gpsEnabled", true);
-
         capabilities.setCapability("appium:setWebContentsDebuggingEnabled", true);
     }
 
@@ -103,11 +95,6 @@ public class IcabbiAndroidDriver extends IcabbiDriverBase<AndroidDriver<AndroidE
             throw new RuntimeException(e);
         }
     }
-
-//    @Override
-//    public void switchToNative() {
-//
-//    }
 
     @Override
     public void switchToWeb() {

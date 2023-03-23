@@ -12,22 +12,10 @@ public class HomeMenuPage {
     this.driver = driver;
   }
 
-//  private MobileElement homeMenuProfileButton() {
-//    return false;
-////    return driver.findElementByAccessibilityId(AccessibilityId.MAIN_MENU_PROFILE_BUTTON);
-//  }
-
   public boolean isBuildVersionTextDisplayed() {
     MobileElement element = driver.findElementById(AccessibilityId.APP_VERSION);
     String pattern = "v\\d\\.\\d\\.\\d \\(\\d+\\)";
     return element.isDisplayed() && element.getText().matches(pattern);
   }
 
-//  public boolean isDisplayed() {
-//    return driver.waitForMobileElementPresence(homeMenuProfileButton(), 3);
-//  }
-
-  public void openProfile() {
-//    homeMenuProfileButton().click();
-  }
 }

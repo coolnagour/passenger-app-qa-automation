@@ -67,11 +67,7 @@ public interface IicabbiDriver {
 
     void stopRecordingScreen(String s) throws IOException;
 
-    void drawSignature(MobileElement field);
-
     void implicitWait();
-
-    void setLocation(String zoneTitle);
 
     void sleep (int milliseconds);
 
